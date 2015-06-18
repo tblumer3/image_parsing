@@ -51,6 +51,7 @@ return array(
 			'database' => __DIR__.'/../database/production.sqlite',
 			'prefix'   => '',
 		),
+		// Database: laravel User: adminPYpQtqx Password: gCHFYuaHp2hc
 
 		'mysql' => array(
 			'driver'    => 'mysql',
