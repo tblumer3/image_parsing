@@ -17,11 +17,9 @@ Route::get('/', function()
 	return View::make('hello')->with('url', $url);
 });
 
-
-// Route::get('/', function () {
-//     $url = route('gimage');
-//     return view('welcome', ['url' => $url]);
-// });
+Route::get('/done', [
+    'as' => 'done', 'uses' => 'ImageController@done'
+]);
 
 Route::get('/image', [
     'as' => 'gimage', 'uses' => 'ImageController@showImage'
@@ -30,6 +28,3 @@ Route::get('/image', [
 Route::post('/image', [
     'as' => 'pimage', 'uses' => 'ImageController@processImage'
 ]);
-// Route::post('/image', function () {
-//     return 'Hello World';
-// });

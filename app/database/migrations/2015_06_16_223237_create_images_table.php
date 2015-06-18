@@ -15,7 +15,6 @@ class CreateImagesTable extends Migration {
 		Schema::create('images', function($table)
 	    {
 	        $table->increments('id');
-	        $table->string('image_name')->unique();
 	        $table->string('make');
 	        $table->string('model');
 	        $table->string('state');
@@ -23,7 +22,9 @@ class CreateImagesTable extends Migration {
 	        $table->boolean('commercial');
 	        $table->string('writing');
 	        $table->boolean('hitch');
-	        $table->string('image_url')->unique();
+	        $table->string('image_url');
+	        $table->string('image_id');
+	        $table->string('aws_image_id');
 
 	        $table->timestamps();
 	    });
