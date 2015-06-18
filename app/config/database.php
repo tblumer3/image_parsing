@@ -54,7 +54,8 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => getenv('OPENSHIFT_MYSQL_DB_HOST'),
+			'port' 		=> getenv('OPENSHIFT_MYSQL_DB_PORT'),
 			'database'  => 'forge',
 			'username'  => 'forge',
 			'password'  => '',
