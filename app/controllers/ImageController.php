@@ -2,8 +2,11 @@
 
 class ImageController extends BaseController {
 
+    protected $layout = 'layouts.master';
+
     public function showImage()
     {
+        $title = "Rate Images";
         $unprocessed_bucket = "unprocessed-images";
         $aws_base_url = "https://unprocessed-images.s3.amazonaws.com/";
         $s3 = AWS::get('s3');
@@ -26,7 +29,7 @@ class ImageController extends BaseController {
         $image_url = $aws_base_url . $aws_image_location;
 
         $url = action('ImageController@processImage');
-        return View::make('show', array('url' => $url, 'image_url' => $image_url, 'image_id' => $image_id, "aws_image_id" => $aws_image_id));
+        return View::make('show', array('url' => $url, 'image_url' => $image_url, 'image_id' => $image_id, "aws_image_id" => $aws_image_id, 'title' => $title));
     }
 
     public function processImage()
@@ -39,10 +42,15 @@ class ImageController extends BaseController {
 
         $image = Image::create($input);
         $success = $image->save();
-
         if (!$success) {
-            return Redirect::to('gimage');
+            return Redirect::route('gimage');
         }
+
+        if (App::environment('local'))
+        {
+            return Redirect::route('dev_page', array('image' => $image->toArray()));
+        }
+
         
         $result = $s3->copyObject(array(
             "Bucket" => $processed_bucket,
@@ -61,6 +69,15 @@ class ImageController extends BaseController {
     public function done()
     {
         return "chicken but";
+    }
+
+    public function devPage()
+    {
+        $input = Input::all();
+        $image = $input['image'];
+        $url = $url = action('gimage');
+
+        return View::make('devPage', array('url' => $url, 'image' => $image));
     }
 
 }

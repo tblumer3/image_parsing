@@ -15,8 +15,11 @@ class CreateImagesTable extends Migration {
 		Schema::create('images', function($table)
 	    {
 	        $table->increments('id');
+	        $table->boolean('no_action');
 	        $table->string('make');
+	        $table->integer('confidence');
 	        $table->string('model');
+	        $table->string('type');
 	        $table->string('state');
 	        $table->string('color');
 	        $table->boolean('commercial');

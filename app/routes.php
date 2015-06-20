@@ -14,7 +14,9 @@
 Route::get('/', function()
 {
     $url = action('gimage');
-	return View::make('hello')->with('url', $url);
+    $title = "Image Rating Landing";
+    $data = array('title' => $title, 'url' => $url);
+	return View::make('hello', $data);
 });
 
 Route::get('/done', [
@@ -27,4 +29,9 @@ Route::get('/image', [
 
 Route::post('/image', [
     'as' => 'pimage', 'uses' => 'ImageController@processImage'
+]);
+// dev_page
+
+Route::get('/dev_notification', [
+    'as' => 'dev_page', 'uses' => 'ImageController@devPage'
 ]);
