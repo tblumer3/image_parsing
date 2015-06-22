@@ -8,7 +8,6 @@ class ImageController extends BaseController {
     {
         //Make a class with the select arrays you want then access them statically from the view
 
-
         $title = "Rate Images";
         $unprocessed_bucket = "unprocessed-images";
         $aws_base_url = "https://unprocessed-images.s3.amazonaws.com/";
@@ -65,7 +64,7 @@ class ImageController extends BaseController {
         $image_url = $aws_base_url . $aws_image_location;
 
         $url = action('ImageController@processImage');
-        return View::make('show', array('url' => $url, 'image_url' => $image_url, 'image_id' => $image_id, "aws_image_id" => $aws_image_id, 'title' => $title, "type" => $type_array, "state" => $state_array));
+        return View::make('show', array('url' => $url, 'image_url' => $image_url, 'image_id' => $image_id, "aws_image_id" => $aws_image_id, 'title' => $title));
     }
 
     public function processImage()
