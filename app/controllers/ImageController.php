@@ -97,7 +97,7 @@ class ImageController extends BaseController {
             'Key' => $input['aws_image_id']
         ));
 
-        $deleted = $S3lock::where('aws_image_id','=', $input['aws_image_id'])->delete();
+        $deleted = S3lock::where('aws_image_id','=', $input['aws_image_id'])->delete();
 
         return Redirect::to('/image');
     }
