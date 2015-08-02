@@ -59,7 +59,7 @@ return array(
 			'port' 		=> getenv('OPENSHIFT_MYSQL_DB_PORT'),
 			'database'  => 'laravel',
 			'username'  => 'adminPYpQtqx',
-			'password'  => ' gCHFYuaHp2hc',
+			'password'  => 'gCHFYuaHp2hc',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

@@ -15,8 +15,7 @@
             <!-- <input type="text" name="type" placeholder="Type"></br> -->
             <select name="type">
                 <option value="" selected>Vehicle Type</option>
-                <option value="sedan4">Sedan - 4 Door</option>
-                <option value="sedan3">Sedan - 2 Door</option>
+                <option value="sedan">Sedan</option>
                 <option value="suv">SUV</option>
                 <option value="pickup">Pick-up Truck</option>
                 <option value="station wagon">Station Wagon</option>
@@ -27,9 +26,20 @@
             </select></br>
             <select name="make">
                 <option value="" selected>Make</option>
+                <option value="Acura">Acura</option>
+                <option value="Aston Martin">Aston Martin</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Buick">Buick</option>
+                <option value="Cadillac">Cadillac</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Chrysler">Chrysler</option>
+                <option value="Dodge">Dodge</option>
+                <option value="Fiat">Fiat</option>
                 <option value="Ford">Ford</option>
                 <option value="GMC">GMC</option>
                 <option value="Honda">Honda</option>
+                <option value="Hummer">Hummer</option>
                 <option value="Hyundai">Hyundai</option>
                 <option value="Infiniti">Infiniti</option>
                 <option value="Isuzu">Isuzu</option>
@@ -45,7 +55,7 @@
                 <option value="Mini">Mini</option>
                 <option value="Mitsubishi">Mitsubishi</option>
                 <option value="Nissan">Nissan</option>
-                <option value="Oldsmobile/Buick">Oldsmobile/Buick</option>
+                <option value="Oldsmobile">Oldsmobile</option>
                 <option value="Pontiac">Pontiac</option>
                 <option value="Porsche">Porsche</option>
                 <option value="Saab">Saab</option>
@@ -54,6 +64,7 @@
                 <option value="Subaru">Subaru</option>
                 <option value="Suzuki">Suzuki</option>
                 <option value="Toyota">Toyota</option>
+                <option value="Tesla">Tesla</option>
                 <option value="Volkswagen">Volkswagen</option>
                 <option value="Volvo">Volvo</option>
             </select></br>

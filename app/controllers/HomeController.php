@@ -17,6 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
+		// die(getenv('OPENSHIFT_MYSQL_DB_HOST'));
 		return View::make('hello');
 	}
 
