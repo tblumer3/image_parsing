@@ -35,3 +35,11 @@ Route::post('/image', [
 Route::get('/dev_notification', [
     'as' => 'dev_page', 'uses' => 'ImageController@devPage'
 ]);
+
+Route::get('/data_dump', [
+    'as' => 'data_dump', 'uses' => 'DataController@csvDownload'
+]);
+
+Route::get('/data_test', [
+    'as' => 'data_test', 'uses' => 'DataController@test'
+]);
